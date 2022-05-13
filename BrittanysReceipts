@@ -21,7 +21,7 @@ const taxCalculator = function (price, province) {
   Price: $${price}
   Province: ${province.location}
   Tax %: ${province.tax}%
-  Tax $: ${actualTax.toFixed(2)}
+  Tax: $${actualTax.toFixed(2)}
   Total: $${total.toFixed(2)}
   `);
 };

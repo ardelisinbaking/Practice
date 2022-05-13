@@ -1,4 +1,47 @@
-const brittanysPanties = (price) => {
+//second attempt
+const province = {
+  bc: {
+    tax: 12,
+    location: "BC",
+  },
+  quebec: {
+    tax: 14.975,
+    location: "Quebec",
+  },
+  ontario: {
+    tax: 13,
+    location: "Ontario",
+  },
+};
+const taxCalculator = function (price, province) {
+  let actualTax = price * (province.tax / 100);
+  let total = price + actualTax;
+  console.log(`
+  Brittany's Interprovincial Receipt
+  Price: $${price}
+  Province: ${province.location}
+  Tax %: ${province.tax}%
+  Tax $: ${actualTax.toFixed(2)}
+  Total: $${total.toFixed(2)}
+  `);
+};
+taxCalculator(42.98, province.quebec);
+
+
+/*notes:
+wet = write everything twice
+dry = dont repeat yourself
+
+1. use helper function ie use a "logger" funciton
+2. naming convention, use verbs for function names, not object names
+3. use variables instead of just numbers ie use a variable for every tax rate, also makes more readable
+4. prefer solutions with fewer "if"s to reduce time complexity
+*/
+
+
+//first attempt
+/*
+  const brittanysPanties = (price) => {
   let percentage = 12;
   let tax = price * (percentage / 100);
   let total = price + tax;
